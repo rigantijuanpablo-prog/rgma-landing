@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RGMA | Abogados Especialistas en Accidentes de Apps</title>
+    <style>
+        :root {
+            --primary: #111827;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --whatsapp: #25d366;
+            --text-dark: #374151;
+            --text-light: #f9fafb;
+            --gray-bg: #f3f4f6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
+        body { color: var(--text-dark); background: #ffffff; line-height: 1.5; padding-bottom: 80px; }
+        header { background: var(--primary); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
+        .logo { color: var(--text-light); font-weight: 800; font-size: 22px; }
+        .logo span { color: var(--accent); }
+        .hero { background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: var(--text-light); padding: 40px 20px; text-align: center; }
+        .hero h1 { font-size: 32px; margin-bottom: 15px; }
+        .hero p { color: #d1d5db; margin-bottom: 30px; }
+        .form-container { background: #ffffff; border-radius: 12px; padding: 24px; max-width: 450px; margin: 0 auto; box-shadow: 0 10px 15px rgba(0,0,0,0.3); text-align: left; color: var(--primary); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
+        .form-control { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; }
+        .submit-btn { width: 100%; background: var(--accent); color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; }
+        .features { padding: 50px 20px; background: var(--gray-bg); text-align: center; }
+        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 25px; max-width: 1000px; margin: 20px auto 0 auto; }
+        .feature-card { background: white; padding: 25px; border-radius: 8px; text-align: left; border-left: 4px solid var(--accent); }
+        .whatsapp-float { position: fixed; bottom: 20px; right: 20px; background: var(--whatsapp); color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; }
+        footer { background: #0f172a; color: #9ca3af; text-align: center; padding: 30px 20px; font-size: 12px; }
+        @media (min-width: 768px) {
+            .hero { display: flex; align-items: center; justify-content: center; gap: 50px; text-align: left; padding: 60px 40px; }
+            .feature-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">RG<span>MA</span></div>
+    </header>
+
+    <section class="hero">
+        <div style="flex: 1; max-width: 550px;">
+            <h1>¿Te lesionaste viajando en Uber, DiDi o Cabify?</h1>
+            <p>Las aplicaciones y los seguros suelen lavarse las manos tras un choque. Hacé valer tus derechos con el primer estudio especializado en pasajeros transportados.</p>
+        </div>
+
+        <div class="form-container">
+            <h3 style="margin-bottom:15px; text-align:center;">Iniciar Consulta Gratuita</h3>
+            <form id="claimForm">
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" id="formName" class="form-control" placeholder="Ej. Juan Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label>¿En qué aplicación viajabas?</label>
+                    <select id="formApp" class="form-control" required>
+                        <option value="">Seleccionar app...</option>
+                        <option value="Uber">Uber</option>
+                        <option value="DiDi">DiDi</option>
+                        <option value="Cabify">Cabify</option>
+                        <option value="Otro">Otro servicio</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">RECLAMAR INDEMNIZACIÓN</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="features">
+        <h2>¿Por qué elegirnos?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h4>100% a resultado</h4>
+                <p>No ponés dinero de tu bolsillo para iniciar el reclamo. Financiamo los gastos y solo cobramos si vos cobrás.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Especialistas en apps</h4>
+                <p>Conocemos la letra chica de los términos y condiciones de las plataformas y cómo obligarlas a responder.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Gestión integral</h4>
+                <p>Nos encargamos de las audiencias, las negociaciones con los seguros y el control de las pericias médicas.</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me" target="_blank" class="whatsapp-float">
+        💬 WhatsApp Directo
+    </a>
+
+    <footer>
+        <p>© 2026 Riganti, Geiller, Márquez Alluralde — Estudio Jurídico. Todos los derechos reservados.</p>
+        <p style="margin-top:10px;">Atención en CABA y Provincia de Buenos Aires. Matrículas CPACF / CASI.</p>
+    </footer>
+
+    <script>
+        document.getElementById('claimForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('formName').value;
+            var app = document.getElementById('formApp').value;
+            var text = "Hola, mi nombre es " + encodeURIComponent(name) + ". Tuve un accidente viajando en " + encodeURIComponent(app) + " y necesito asesoramiento.";
+            window.open("https://wa.me?text=" + text, "_blank");
+        });
+    </script>
+</body>
+</html>

@@ -68,18 +68,21 @@
                     </select>
                 </div>
                 <button type="submit" class="submit-btn">RECLAMAR INDEMNIZACIÓN</button>
-                <!-- Botón Rojo Desplegable Corregido -->
-            <button type="button" class="emergency-btn" onclick="toggleEmergencyGuide()">🚨 Que hacer mientras nos ponemos en contacto</button>
-            
-            <div id="emergencyGuide" style="display: none; margin-top: 15px; padding: 12px; background: #fef2f2; border: 1px solid #fee2e2; border-radius: 6px; font-size: 13px; color: #991b1b; line-height: 1.4;">
-                <p style="font-weight: bold; margin-bottom: 8px; border-bottom: 1px solid #fee2e2; padding-bottom: 4px;">Pasos Críticos e Indispensables:</p>
-                <ul style="padding-left: 18px; margin: 0;">
-                    <li style="margin-bottom: 6px;"><strong>Radicar la denuncia policial:</strong> Si hay lesionados, concurrí a la comisaría más cercana para radicar la denuncia policial por el choque de forma urgente. Es clave para registrar las actas oficiales del hecho.</li>
-                    <li style="margin-bottom: 6px;"><strong>Evidencia Digital:</strong> Guardá capturas de pantalla completas del viaje en la app (datos del chofer, patente, mapa y tarifa) antes de que la plataforma oculte la información.</li>
-                    <li style="margin-bottom: 6px;"><strong>Atención Médica:</strong> Concurrí a una guardia hospitalaria dentro de las 48 hs. Exigí que dejen constancia escrita de que tus dolores o golpes fueron causados por un "accidente de tránsito".</li>
-                    <li><strong>Aseguradoras:</strong> No firmes ningún papel, no aceptes pagos rápidos ni des declaraciones a los peritos de los seguros sin la supervisión de nuestro estudio.</li>
-                </ul>
-            </div>
+             <!-- Botón Rojo Desplegable e Interactivo Corregido -->
+<button type="button" style="width: 100%; background: #fef2f2; border: 1px solid #fca5a5; color: #dc2626; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;" onclick="document.getElementById('guiaEmergencia').style.display = document.getElementById('guiaEmergencia').style.display === 'none' ? 'block' : 'none'">
+    <span>🚨 ¿Qué hacer mientras nos ponemos en contacto?</span>
+    <span>▼</span>
+</button>
+
+<div id="guiaEmergencia" style="display: none; margin-top: 10px; padding: 15px; background: #ffffff; border: 1px solid #fca5a5; border-radius: 6px; font-size: 13px; color: #374151; line-height: 1.5; text-align: left;">
+    <p style="font-weight: bold; margin-bottom: 8px; color: #dc2626; border-bottom: 1px solid #fca5a5; padding-bottom: 4px;">Pasos Críticos e Indispensables:</p>
+    <ul style="padding-left: 18px; margin: 0; color: #4b5563;">
+        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Radicar la denuncia policial:</strong> Si hay lesionados, concurrí a la comisaría de la zona para asentar el choque de forma urgente. Es clave para registrar las actas oficiales.</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Evidencia Digital:</strong> Guardá capturas de pantalla completas del viaje en la app (datos del chofer, patente, mapa y tarifa) antes de que la plataforma oculte la información.</li>
+        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Atención Médica:</strong> Concurrí a una guardia hospitalaria dentro de las 48 hs. Exigí que dejen constancia escrita de que tus dolores o golpes fueron causados por un "accidente de tránsito".</li>
+        <li><strong style="color: #dc2626;">Aseguradoras:</strong> No firmes ningún papel, no aceptes pagos rápidos ni des declaraciones a los peritos de los seguros sin la supervisión de nuestro estudio.</li>
+    </ul>
+</div>
             </form>
         </div>
     </section>

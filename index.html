@@ -4,128 +4,361 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RGMA | Abogados Especialistas en Accidentes de Apps</title>
-    <style>
+   <style>
+        /* --- VARIABLES DE DISEÑO PREMIUM MULTIPLATAFORMA --- */
         :root {
-            --primary: #111827;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --whatsapp: #25d366;
-            --text-dark: #374151;
-            --text-light: #f9fafb;
-            --gray-bg: #f3f4f6;
+            --color-primario: #070e1b;   /* Azul medianoche profundo corporativo */
+            --color-secundario: #c5a880; /* Dorado satinado institucional */
+            --color-fondo-claro: #f8fafc;/* Gris de fondo limpio */
+            --color-texto-oscuro: #1e293b;
+            --color-texto-suave: #64748b;
+            --color-alerta: #b91c1c;     /* Rojo institucional para emergencias */
+            --fuente-titulos: 'Cinzel', serif;
+            --fuente-cuerpo: 'Montserrat', sans-serif;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
-        body { color: var(--text-dark); background: #ffffff; line-height: 1.5; padding-bottom: 80px; }
-        header { background: var(--primary); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); }
-        .logo { color: var(--text-light); font-weight: 800; font-size: 22px; }
-        .logo span { color: var(--accent); }
-        .hero { background: linear-gradient(135deg, #111827 0%, #1f2937 100%); color: var(--text-light); padding: 40px 20px; text-align: center; }
-        .hero h1 { font-size: 32px; margin-bottom: 15px; }
-        .hero p { color: #d1d5db; margin-bottom: 30px; }
-        .form-container { background: #ffffff; border-radius: 12px; padding: 24px; max-width: 450px; margin: 0 auto; box-shadow: 0 10px 15px rgba(0,0,0,0.3); text-align: left; color: var(--primary); }
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 5px; }
-        .form-control { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 6px; }
-        .submit-btn { width: 100%; background: var(--accent); color: white; border: none; padding: 14px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; }
-        .features { padding: 50px 20px; background: var(--gray-bg); text-align: center; }
-        .feature-grid { display: grid; grid-template-columns: 1fr; gap: 25px; max-width: 1000px; margin: 20px auto 0 auto; }
-        .feature-card { background: white; padding: 25px; border-radius: 8px; text-align: left; border-left: 4px solid var(--accent); }
-        .whatsapp-float { position: fixed; bottom: 20px; left: 20px; background: var(--whatsapp); color: white; padding: 12px 24px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 999; }
-        footer { background: #0f172a; color: #9ca3af; text-align: center; padding: 30px 20px; font-size: 12px; }
-        @media (min-width: 768px) {
-            .hero { display: flex; align-items: center; justify-content: center; gap: 50px; text-align: left; padding: 60px 40px; }
-            .feature-grid { grid-template-columns: repeat(3, 1fr); }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-    </style>
+
+        body {
+            font-family: var(--fuente-cuerpo);
+            color: var(--color-texto-oscuro);
+            background-color: #ffffff;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- BARRA DE NAVEGACIÓN PREMIUM --- */
+        .header-premium {
+            background-color: rgba(7, 14, 27, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        .logo-rgma {
+            font-family: var(--fuente-titulos);
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .logo-rgma span {
+            color: var(--color-secundario);
+        }
+
+        .btn-volver-institucional {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--color-secundario);
+            padding: 8px 18px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-volver-institucional:hover {
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+        }
+
+        /* --- HERO SECCIÓN (PORTADA RECLAMOS) --- */
+        .hero-reclamar {
+            position: relative;
+            background-image: linear-gradient(rgba(7, 14, 27, 0.75), rgba(7, 14, 27, 0.9)), url('https://unsplash.com');
+            background-size: cover;
+            background-position: center;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 5%;
+            color: #ffffff;
+        }
+
+        .hero-contenedor {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .hero-texto h1 {
+            font-family: var(--fuente-titulos);
+            font-size: 44px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-texto p {
+            font-size: 18px;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        /* --- FORMULARIO INTEGRADO AL DISEÑO --- */
+        .tarjeta-formulario {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .tarjeta-formulario h3 {
+            font-family: var(--fuente-titulos);
+            color: var(--color-secundario);
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .grupo-input {
+            margin-bottom: 20px;
+        }
+
+        .grupo-input label {
+            display: block;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: var(--color-secundario);
+        }
+
+        .grupo-input input, .grupo-input select {
+            width: 100%;
+            padding: 12px;
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            border-radius: 4px;
+            font-family: var(--fuente-cuerpo);
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .grupo-input input:focus, .grupo-input select:focus {
+            border-color: var(--color-secundario);
+        }
+
+        .grupo-input select option {
+            background-color: var(--color-primario);
+            color: #ffffff;
+        }
+
+        .btn-enviar-formulario {
+            width: 100%;
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn-enviar-formulario:hover {
+            background-color: #b0936b;
+            transform: translateY(-2px);
+        }
+
+        /* --- SECCIÓN VENTAJAS (GRID CORPORATIVO) --- */
+        .seccion-ventajas {
+            padding: 100px 5%;
+            background-color: var(--color-fondo-claro);
+            text-align: center;
+        }
+
+        .titulo-seccion {
+            font-family: var(--fuente-titulos);
+            font-size: 36px;
+            color: var(--color-primario);
+            margin-bottom: 15px;
+        }
+
+        .linea-decorativa {
+            width: 60px;
+            height: 3px;
+            background-color: var(--color-secundario);
+            margin: 0 auto 50px auto;
+        }
+
+        .grid-ventajas {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tarjeta-ventaja {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--color-primario);
+            transition: transform 0.3s ease;
+        }
+
+        .tarjeta-ventaja:hover {
+            transform: translateY(-5px);
+            border-top-color: var(--color-secundario);
+        }
+
+        .tarjeta-ventaja h4 {
+            font-family: var(--fuente-titulos);
+            font-size: 20px;
+            color: var(--color-primario);
+            margin-bottom: 15px;
+        }
+
+        /* --- PASOS CRÍTICOS (CRONOLOGÍA ASESORAMIENTO) --- */
+        .seccion-pasos {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lista-pasos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .item-paso {
+            background-color: #ffffff;
+            border-left: 4px solid var(--color-alerta);
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border-radius: 0 6px 6px 0;
+        }
+
+        .item-paso strong {
+            font-family: var(--fuente-titulos);
+            color: var(--color-primario);
+            font-size: 18px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 968px) {
+            .hero-contenedor, .grid-ventajas, .lista-pasos {
+                grid-template-columns: 1fr;
+            }
+            .hero-texto { text-align: center; }
+            .hero-texto h1 { font-size: 32px; }
+        }
+</style>
 </head>
 <body>
 
-    <header>
-        <div class="logo">RG<span>MA</span></div>
+    <!-- 🧭 NAVEGACIÓN INSTITUCIONAL -->
+    <header class="header-premium">
+        <a href="#" class="logo-rgma">RG<span>MA</span></a>
+        <!-- INTERCONEXIÓN: Enlace directo a tu landing page principal anterior -->
+        <a href="https://github.io" class="btn-volver-institucional">← Portal Institucional</a>
     </header>
 
-    <section class="hero">
-        <div style="flex: 1; max-width: 550px;">
-            <h1>¿Te lesionaste viajando en Uber, DiDi o Cabify?</h1>
-            <p>Las aplicaciones y los seguros suelen lavarse las manos tras un choque. Hacé valer tus derechos con el primer estudio especializado en pasajeros transportados.</p>
-        </div>
-
-        <div class="form-container">
-            <h3 style="margin-bottom:15px; text-align:center;">Iniciar Consulta Gratuita</h3>
-            <form id="claimForm">
-                <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" id="formName" class="form-control" placeholder="Ej. Juan Pérez" required>
-                </div>
-                <div class="form-group">
-                    <label>¿En qué aplicación viajabas?</label>
-                    <select id="formApp" class="form-control" required>
-                        <option value="">Seleccionar app...</option>
-                        <option value="Uber">Uber</option>
-                        <option value="DiDi">DiDi</option>
-                        <option value="Cabify">Cabify</option>
-                        <option value="Otro">Otro servicio</option>
-                    </select>
-                </div>
-                <button type="submit" class="submit-btn">RECLAMAR INDEMNIZACIÓN</button>
-             <!-- Botón Rojo Desplegable e Interactivo Corregido -->
-<button type="button" style="width: 100%; background: #fef2f2; border: 1px solid #fca5a5; color: #dc2626; padding: 12px; border-radius: 6px; font-weight: bold; font-size: 14px; cursor: pointer; margin-top: 15px; display: flex; justify-content: space-between; align-items: center;" onclick="document.getElementById('guiaEmergencia').style.display = document.getElementById('guiaEmergencia').style.display === 'none' ? 'block' : 'none'">
-    <span>🚨 ¿Qué hacer mientras nos ponemos en contacto?</span>
-    <span>▼</span>
-</button>
-
-<div id="guiaEmergencia" style="display: none; margin-top: 10px; padding: 15px; background: #ffffff; border: 1px solid #fca5a5; border-radius: 6px; font-size: 13px; color: #374151; line-height: 1.5; text-align: left;">
-    <p style="font-weight: bold; margin-bottom: 8px; color: #dc2626; border-bottom: 1px solid #fca5a5; padding-bottom: 4px;">Pasos Críticos e Indispensables:</p>
-    <ul style="padding-left: 18px; margin: 0; color: #4b5563;">
-        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Radicar la denuncia policial:</strong> Si hay lesionados, concurrí a la comisaría de la zona para asentar el choque de forma urgente. Es clave para registrar las actas oficiales.</li>
-        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Evidencia Digital:</strong> Guardá capturas de pantalla completas del viaje en la app (datos del chofer, patente, mapa y tarifa) antes de que la plataforma oculte la información.</li>
-        <li style="margin-bottom: 8px;"><strong style="color: #dc2626;">Atención Médica:</strong> Concurrí a una guardia hospitalaria dentro de las 48 hs. Exigí que dejen constancia escrita de que tus dolores o golpes fueron causados por un "accidente de tránsito".</li>
-        <li><strong style="color: #dc2626;">Aseguradoras:</strong> No firmes ningún papel, no aceptes pagos rápidos ni des declaraciones a los peritos de los seguros sin la supervisión de nuestro estudio.</li>
-    </ul>
-</div>
-            </form>
-        </div>
-    </section>
-
-    <section class="features">
-        <h2>¿Por qué elegirnos?</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <h4>100% a resultado</h4>
-                <p>No ponés dinero de tu bolsillo para iniciar el reclamo. Financiamos los gastos y solo cobramos si vos cobrás.</p>
+    <!-- 🛡️ HERO RECLAMAR APP -->
+    <section class="hero-reclamar">
+        <div class="hero-contenedor">
+            <div class="hero-texto">
+                <h1>¿Te lesionaste viajando en Uber, DiDi o Cabify?</h1>
+                <p>Las aplicaciones corporativas y los sistemas de seguros suelen deslindar responsabilidades tras un siniestro. Haga valer sus derechos con la división de alta complejidad en pasajeros transportados.</p>
             </div>
-            <div class="feature-card">
-                <h4>Especialistas en apps</h4>
-                <p>Conocemos la letra chica de los términos y condiciones de las plataformas y cómo obligarlas a responder.</p>
-            </div>
-            <div class="feature-card">
-                <h4>Gestión integral</h4>
-                <p>Nos encargamos de las audiencias, las negociaciones con los seguros y el control de las pericias médicas.</p>
+            
+            <div class="tarjeta-formulario">
+                <h3>Iniciar Consulta Gratuita</h3>
+                <form action="#" method="POST">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="app">¿En qué aplicación viajabas?</label>
+                        <select id="app" name="app" required>
+                            <option value="" disabled selected>Seleccione la plataforma...</option>
+                            <option value="uber">Uber</option>
+                            <option value="didi">DiDi</option>
+                            <option value="cabify">Cabify</option>
+                            <option value="otro">Otro Servicio de Plataforma</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-enviar-formulario">Reclamar Indemnización</button>
+                </form>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/5491135565078" target="_blank" class="whatsapp-float">
-        💬 WhatsApp Directo
-    </a>
+    <!-- 📊 SECCIÓN VALOR (¿POR QUÉ ELEGIRNOS?) -->
+    <section class="seccion-ventajas">
+        <h2 class="titulo-seccion">Especialistas en Litigios de Plataformas</h2>
+        <div class="linea-decorativa"></div>
+        <div class="grid-ventajas">
+            <div class="tarjeta-ventaja">
+                <h4>100% a Resultado</h4>
+                <p>Financiamos la totalidad de los gastos periciales y de tramitación institucional. Solo percibimos honorarios al concretar su indemnización legal.</p>
+            </div>
+            <div class="tarjeta-ventaja">
+                <h4>Especialistas en Apps</h4>
+                <p>Análisis riguroso de la letra chica en términos contractuales complejos de plataformas globales para forzar la cobertura obligatoria.</p>
+            </div>
+            <div class="tarjeta-ventaja">
+                <h4>Gestión Integral</h4>
+                <p>Asumimos la representación ante audiencias conciliatorias, negociaciones corporativas de seguros y auditorías de pericias médicas.</p>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2026 Riganti, Geiller, Márquez Alluralde — Estudio Jurídico. Todos los derechos reservados.</p>
-        <p style="margin-top:10px;">Atención en CABA y Provincia de Buenos Aires. Matrículas CPACF / CASI.</p>
-    </footer>
-
-    <script>
-        document.getElementById('claimForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = document.getElementById('formName').value;
-            var app = document.getElementById('formApp').value;
-            var text = "Hola, mi nombre es " + encodeURIComponent(name) + ". Tuve un accidente viajando en " + encodeURIComponent(app) + " y necesito asesoramiento.";
-            window.open("https://wa.me/5491135565078?text=" + text, "_blank");
-        });
-    </script>
-
-    <!-- Código de Tidio integrado correctamente en la zona final de ejecución -->
-    <script src="//code.tidio.co/ahxay0y77kxxjm9kngad8vvaiimqqqop.js" async></script>
+    <!-- ⚠️ PASOS CRÍTICOS SECCIÓN -->
+    <section class="seccion-pasos">
+        <h2 class="titulo-seccion" style="text-align: center; color: var(--color-alerta);">Protocolo Crítico de Evidencia</h2>
+        <div class="linea-decorativa" style="background-color: var(--color-alerta);"></div>
+        
+        <div class="lista-pasos">
+            <div class="item-paso">
+                <strong>1. Radicar la Denuncia Policial</strong>
+                <p>Ante lesiones, concurrí a la comisaría correspondiente a la zona del choque de forma urgente para la apertura de actas oficiales.</p>
+            </div>
+            <div class="item-paso">
+                <strong>2. Resguardo de Evidencia Digital</strong>
+                <p>Capturá pantallas del viaje activo (patente, datos del chofer, mapa de ruta y tarifa) antes de que la app cierre la sesión del siniestro.</p>
+            </div>
+            <div class="item-paso">
+                <strong>3. Constancia Médica de Guardia</strong>
+                <p>Acudí a un centro médico asistencial dentro de las primeras 48 horas. Exigí que se certifique por escrito el origen vehicular de las afecciones.</p>
+            </div>
+            <div class="item-paso">
+                <strong>4. Exclusión de Aseguradoras</strong>
+                <p>No firme documentación, transacciones rápidas ni preste declaraciones a liquidadores corporativos sin patrocinio letrado directo de nuestra firma.</p>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>

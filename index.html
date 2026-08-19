@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGMA | Abogados Especialistas en Accidentes de Apps</title>
-   <style>
-        /* --- VARIABLES DE DISEÑO PREMIUM MULTIPLATAFORMA --- */
+    <title>RGM | Abogados Especialistas en Accidentes de Apps</title>
+    <!-- Fuentes Corporativas de Élite de la Firma RGM -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- VARIABLES DE DISEÑO PREMIUM (ESTILO CORPORATIVO RGM) --- */
         :root {
-            --color-primario: #070e1b;   /* Azul medianoche profundo corporativo */
-            --color-secundario: #c5a880; /* Dorado satinado institucional */
-            --color-fondo-claro: #f8fafc;/* Gris de fondo limpio */
+            --color-primario: #070e1b;   /* Azul medianoche profundo corporativo RGM */
+            --color-secundario: #c5a880; /* Dorado satinado institucional RGM */
+            --color-fondo-claro: #f8fafc;/* Gris de fondo premium ultra limpio */
             --color-texto-oscuro: #1e293b;
             --color-texto-suave: #64748b;
-            --color-alerta: #b91c1c;     /* Rojo institucional para emergencias */
+            --color-alerta: #b91c1c;     /* Rojo institucional para protocolos de emergencia */
             --fuente-titulos: 'Cinzel', serif;
             --fuente-cuerpo: 'Montserrat', sans-serif;
         }
@@ -32,102 +37,110 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* --- BARRA DE NAVEGACIÓN PREMIUM --- */
+        /* --- BARRA DE NAVEGACIÓN PREMIUM ALINEADA CON PORTAL PRINCIPAL --- */
         .header-premium {
-            background-color: rgba(7, 14, 27, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 5%;
+            background-color: rgba(7, 14, 27, 0.96);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 22px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+            border-bottom: 1px solid rgba(197, 168, 128, 0.12);
         }
 
-        .logo-rgma {
+        .logo-rgm {
             font-family: var(--fuente-titulos);
             color: #ffffff;
             font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 500;
+            letter-spacing: 3px;
             text-decoration: none;
         }
 
-        .logo-rgma span {
-            color: var(--color-secundario);
+        .logo-rgm span {
+            color: var(--color-secundario) !important;
         }
 
         .btn-volver-institucional {
-            color: #ffffff;
+            color: rgba(255, 255, 255, 0.85);
             text-decoration: none;
-            font-size: 14px;
-            font-weight: 600;
+            font-size: 0.8rem;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--color-secundario);
-            padding: 8px 18px;
-            border-radius: 4px;
+            letter-spacing: 2px;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            padding: 10px 22px;
             transition: all 0.3s ease;
+            background: transparent;
         }
 
         .btn-volver-institucional:hover {
             background-color: var(--color-secundario);
             color: var(--color-primario);
+            border-color: var(--color-secundario);
         }
 
-        /* --- HERO SECCIÓN (PORTADA RECLAMOS) --- */
+        /* --- HERO SECCIÓN (PORTADA RECLAMOS INTEGRADA CON GRADIENTES RGM) --- */
         .hero-reclamar {
             position: relative;
-            background-image: linear-gradient(rgba(7, 14, 27, 0.75), rgba(7, 14, 27, 0.9)), url('https://unsplash.com');
+            background-image: linear-gradient(rgba(7, 14, 27, 0.75), rgba(7, 14, 27, 0.9)), url('obelisco-estudio.png');
             background-size: cover;
             background-position: center;
             min-height: 85vh;
             display: flex;
             align-items: center;
-            padding: 60px 5%;
+            padding: 60px 8%;
             color: #ffffff;
         }
 
         .hero-contenedor {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            max-width: 1200px;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            max-width: 1300px;
             margin: 0 auto;
             align-items: center;
+            width: 100%;
         }
 
         .hero-texto h1 {
             font-family: var(--fuente-titulos);
-            font-size: 44px;
-            line-height: 1.2;
-            margin-bottom: 20px;
+            font-size: 40px;
+            line-height: 1.3;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
         }
 
         .hero-texto p {
-            font-size: 18px;
-            color: #e2e8f0;
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.8);
             margin-bottom: 30px;
+            font-weight: 300;
         }
 
-        /* --- FORMULARIO INTEGRADO AL DISEÑO --- */
+        /* --- FORMULARIO INTEGRADO PREMIUM --- */
         .tarjeta-formulario {
-            background-color: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background-color: rgba(7, 14, 27, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
 
         .tarjeta-formulario h3 {
             font-family: var(--fuente-titulos);
             color: var(--color-secundario);
-            font-size: 22px;
+            font-size: 20px;
             margin-bottom: 25px;
             text-align: center;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         .grupo-input {
@@ -136,20 +149,20 @@
 
         .grupo-input label {
             display: block;
-            font-size: 13px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
             margin-bottom: 8px;
             color: var(--color-secundario);
+            font-weight: 600;
         }
 
         .grupo-input input, .grupo-input select {
             width: 100%;
-            padding: 12px;
-            background-color: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 13px;
+            background-color: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: #ffffff;
-            border-radius: 4px;
             font-family: var(--fuente-cuerpo);
             font-size: 15px;
             outline: none;
@@ -167,102 +180,148 @@
 
         .btn-enviar-formulario {
             width: 100%;
-            background-color: var(--color-secundario);
-            color: var(--color-primario);
-            border: none;
+            background-color: var(--color-primario);
+            color: #ffffff;
+            border: 1px solid var(--color-secundario);
             padding: 15px;
-            font-size: 16px;
-            font-weight: 700;
+            font-size: 14px;
+            font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
+            letter-spacing: 2px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            transition: all 0.4s ease;
         }
 
         .btn-enviar-formulario:hover {
-            background-color: #b0936b;
-            transform: translateY(-2px);
+            background-color: var(--color-secundario);
+            color: var(--color-primario);
+            box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
         }
 
-        /* --- SECCIÓN VENTAJAS (GRID CORPORATIVO) --- */
+        /* --- SECCIÓN VENTAJAS (GRID CORPORATIVO RGM) --- */
         .seccion-ventajas {
-            padding: 100px 5%;
+            padding: 140px 12%;
             background-color: var(--color-fondo-claro);
             text-align: center;
         }
 
         .titulo-seccion {
             font-family: var(--fuente-titulos);
-            font-size: 36px;
+            font-size: 2.2rem;
             color: var(--color-primario);
             margin-bottom: 15px;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         .linea-decorativa {
-            width: 60px;
-            height: 3px;
+            width: 40px;
+            height: 1px;
             background-color: var(--color-secundario);
             margin: 0 auto 50px auto;
         }
 
         .grid-ventajas {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .tarjeta-ventaja {
             background-color: #ffffff;
-            padding: 40px 30px;
-            border-radius: 6px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--color-primario);
-            transition: transform 0.3s ease;
+            padding: 55px 40px;
+            border: 1px solid #e2e8f0;
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .tarjeta-ventaja:hover {
-            transform: translateY(-5px);
-            border-top-color: var(--color-secundario);
+            transform: translateY(-8px);
+            border-color: var(--color-secundario);
+            box-shadow: 0 30px 60px rgba(7, 14, 27, 0.04);
         }
 
         .tarjeta-ventaja h4 {
             font-family: var(--fuente-titulos);
-            font-size: 20px;
+            font-size: 1.25rem;
             color: var(--color-primario);
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .tarjeta-ventaja p {
+            color: var(--color-texto-suave);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 300;
         }
 
         /* --- PASOS CRÍTICOS (CRONOLOGÍA ASESORAMIENTO) --- */
         .seccion-pasos {
-            padding: 100px 5%;
-            max-width: 1200px;
+            padding: 140px 12%;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .lista-pasos {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
             margin-top: 40px;
         }
 
         .item-paso {
             background-color: #ffffff;
-            border-left: 4px solid var(--color-alerta);
-            padding: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
-            border-radius: 0 6px 6px 0;
+            border-left: 2px solid var(--color-alerta);
+            padding: 35px 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            border-top: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
         }
 
         .item-paso strong {
             font-family: var(--fuente-titulos);
             color: var(--color-primario);
-            font-size: 18px;
+            font-size: 1.15rem;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .item-paso p {
+            color: var(--color-texto-suave);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        /* --- 🟢 NUEVO BOTÓN FLOTANTE FIXED DE WHATSAPP --- */
+        .boton-whatsapp-fijo {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: #ffffff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 9999;
+             transition: transform 0.3s ease, background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .boton-whatsapp-fijo:hover {
+            transform: scale(1.1);
+            background-color: #20ba59;
         }
 
         /* --- RESPONSIVE DESIGN --- */
@@ -272,29 +331,31 @@
             }
             .hero-texto { text-align: center; }
             .hero-texto h1 { font-size: 32px; }
+            .seccion-ventajas, .seccion-pasos { padding: 100px 5%; }
+            .titulo-seccion { font-size: 2rem; }
         }
-</style>
+    </style>
 </head>
 <body>
 
-    <!-- 🧭 NAVEGACIÓN INSTITUCIONAL -->
+    <!-- 🧭 NAVEGACIÓN INSTITUCIONAL FIEL A RGM -->
     <header class="header-premium">
-        <a href="#" class="logo-rgma">RG<span>MA</span></a>
-        <!-- INTERCONEXIÓN: Enlace directo a tu landing page principal anterior -->
+        <a href="#" class="logo-rgm">RGM<span>A</span></a>
+        <!-- INTERCONEXIÓN: Enlace directo a tu portal principal B -->
         <a href="https://github.io" class="btn-volver-institucional">← Portal Institucional</a>
     </header>
 
-    <!-- 🛡️ HERO RECLAMAR APP -->
+    <!-- 🛡️ HERO RECLAMAR APP CON FILTRO OSCURO CORPORATIVO -->
     <section class="hero-reclamar">
         <div class="hero-contenedor">
             <div class="hero-texto">
                 <h1>¿Te lesionaste viajando en Uber, DiDi o Cabify?</h1>
-                <p>Las aplicaciones corporativas y los sistemas de seguros suelen deslindar responsabilidades tras un siniestro. Haga valer sus derechos con la división de alta complejidad en pasajeros transportados.</p>
+                <p>Las aplicaciones corporativas y los sistemas de seguros suelen deslindar responsabilidades tras un siniestro. Haga valer sus derechos con la división de alta complejidad en pasajeros transportados de la firma RGM.</p>
             </div>
             
             <div class="tarjeta-formulario">
                 <h3>Iniciar Consulta Gratuita</h3>
-                <form action="#" method="POST">
+                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Su requerimiento institucional ha sido recibido con éxito de manera estrictamente confidencial. Un profesional de la firma RGM se comunicará a la brevedad.');">
                     <div class="grupo-input">
                         <label for="nombre">Nombre Completo</label>
                         <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
@@ -314,7 +375,6 @@
             </div>
         </div>
     </section>
-
     <!-- 📊 SECCIÓN VALOR (¿POR QUÉ ELEGIRNOS?) -->
     <section class="seccion-ventajas">
         <h2 class="titulo-seccion">Especialistas en Litigios de Plataformas</h2>
@@ -322,43 +382,47 @@
         <div class="grid-ventajas">
             <div class="tarjeta-ventaja">
                 <h4>100% a Resultado</h4>
-                <p>Financiamos la totalidad de los gastos periciales y de tramitación institucional. Solo percibimos honorarios al concretar su indemnización legal.</p>
+                <p>Financiamos la totalidad de los gastos periciales. Solo percibimos honorarios al concretar su indemnización legal.</p>
             </div>
             <div class="tarjeta-ventaja">
                 <h4>Especialistas en Apps</h4>
-                <p>Análisis riguroso de la letra chica en términos contractuales complejos de plataformas globales para forzar la cobertura obligatoria.</p>
+                <p>Análisis riguroso de la letra chica en términos contractuales complejos de plataformas globales.</p>
             </div>
             <div class="tarjeta-ventaja">
                 <h4>Gestión Integral</h4>
-                <p>Asumimos la representación ante audiencias conciliatorias, negociaciones corporativas de seguros y auditorías de pericias médicas.</p>
+                <p>Asumimos la representación ante audiencias, negociaciones corporativas de seguros y pericias médicas.</p>
             </div>
         </div>
     </section>
-
-    <!-- ⚠️ PASOS CRÍTICOS SECCIÓN -->
+     <!-- ⚠️ PROTOCOLO DE EVIDENCIA Y CIERRE -->
     <section class="seccion-pasos">
         <h2 class="titulo-seccion" style="text-align: center; color: var(--color-alerta);">Protocolo Crítico de Evidencia</h2>
         <div class="linea-decorativa" style="background-color: var(--color-alerta);"></div>
         
         <div class="lista-pasos">
             <div class="item-paso">
-                <strong>1. Radicar la Denuncia Policial</strong>
-                <p>Ante lesiones, concurrí a la comisaría correspondiente a la zona del choque de forma urgente para la apertura de actas oficiales.</p>
+                <strong>1. Denuncia Policial</strong>
+                <p>Ante lesiones, concurrí a la comisaría correspondiente a la zona del choque de forma urgente.</p>
             </div>
             <div class="item-paso">
-                <strong>2. Resguardo de Evidencia Digital</strong>
-                <p>Capturá pantallas del viaje activo (patente, datos del chofer, mapa de ruta y tarifa) antes de que la app cierre la sesión del siniestro.</p>
+                <strong>2. Evidencia Digital</strong>
+                <p>Capturá pantallas del viaje activo (patente, chofer, ruta y tarifa) antes de que cierre la sesión.</p>
             </div>
             <div class="item-paso">
-                <strong>3. Constancia Médica de Guardia</strong>
-                <p>Acudí a un centro médico asistencial dentro de las primeras 48 horas. Exigí que se certifique por escrito el origen vehicular de las afecciones.</p>
+                <strong>3. Constancia Médica</strong>
+                <p>Acudí a un centro médico dentro de las primeras 48 horas. Exigí constancia del origen vehicular.</p>
             </div>
             <div class="item-paso">
                 <strong>4. Exclusión de Aseguradoras</strong>
-                <p>No firme documentación, transacciones rápidas ni preste declaraciones a liquidadores corporativos sin patrocinio letrado directo de nuestra firma.</p>
+                <p>No firme documentación rápida ni preste declaraciones a liquidadores sin patrocinio directo de RGM.</p>
             </div>
         </div>
     </section>
 
+    <!-- 🟢 BOTÓN INTERACTIVO DE WHATSAPP FLOTANTE -->
+    <a href="https://wa.me" class="boton-whatsapp-fijo" target="_blank" title="Contactar por WhatsApp">
+        <svg xmlns="http://w3.org" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="display: block;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.24 8.413 3.496 2.25 2.256 3.484 5.247 3.48 8.425-.008 6.599-5.346 11.947-11.898 11.947-2.006-.001-3.973-.508-5.729-1.475L0 24zm6.49-4.981c1.657.982 3.315 1.517 5.4 1.518 5.485 0 9.948-4.487 9.954-10.001.003-2.671-1.041-5.183-2.94-7.086-1.9-1.904-4.417-2.951-7.082-2.954-5.492 0-9.956 4.487-9.962 10.001-.002 1.954.512 3.86 1.49 5.56l-1.002 3.662 3.742-.981zm12.38-5.383c-.33-.165-1.951-.963-2.258-1.077-.306-.113-.53-.169-.752.165-.222.335-.858 1.077-1.052 1.3-.194.223-.389.247-.72.082-1.354-.679-2.261-1.196-3.171-2.762-.24-.413.24-.383.687-1.275.083-.165.042-.31-.02-.474-.063-.165-.53-1.275-.726-1.748-.191-.459-.386-.396-.53-.404-.135-.007-.29-.009-.445-.009-.155 0-.407.058-.621.288-.214.23-.817.799-.817 1.95s.839 2.262.955 2.417c.117.155 1.652 2.522 4.002 3.535.56.242 1.0.387 1.341.495.563.179 1.076.154 1.482.094.453-.067 1.951-.798 2.227-1.57.275-.771.275-1.432.194-1.57-.081-.138-.297-.221-.627-.386z"/></svg>
+    </a>
+
 </body>
-</html> 
+</html>

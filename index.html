@@ -1,428 +1,125 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RGM | Abogados Especialistas en Accidentes de Apps</title>
-    <!-- Fuentes Corporativas de Élite de la Firma RGM -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        /* --- VARIABLES DE DISEÑO PREMIUM (ESTILO CORPORATIVO RGM) --- */
-        :root {
-            --color-primario: #070e1b;   /* Azul medianoche profundo corporativo RGM */
-            --color-secundario: #c5a880; /* Dorado satinado institucional RGM */
-            --color-fondo-claro: #f8fafc;/* Gris de fondo premium ultra limpio */
-            --color-texto-oscuro: #1e293b;
-            --color-texto-suave: #64748b;
-            --color-alerta: #b91c1c;     /* Rojo institucional para protocolos de emergencia */
-            --fuente-titulos: 'Cinzel', serif;
-            --fuente-cuerpo: 'Montserrat', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--fuente-cuerpo);
-            color: var(--color-texto-oscuro);
-            background-color: #ffffff;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- BARRA DE NAVEGACIÓN PREMIUM ALINEADA CON PORTAL PRINCIPAL --- */
-        .header-premium {
-            background-color: rgba(7, 14, 27, 0.96);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            padding: 22px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(197, 168, 128, 0.12);
-        }
-
-        .logo-rgm {
-            font-family: var(--fuente-titulos);
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: 500;
-            letter-spacing: 3px;
-            text-decoration: none;
-        }
-
-        .logo-rgm span {
-            color: var(--color-secundario) !important;
-        }
-
-        .btn-volver-institucional {
-            color: rgba(255, 255, 255, 0.85);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            border: 1px solid rgba(197, 168, 128, 0.3);
-            padding: 10px 22px;
-            transition: all 0.3s ease;
-            background: transparent;
-        }
-
-        .btn-volver-institucional:hover {
-            background-color: var(--color-secundario);
-            color: var(--color-primario);
-            border-color: var(--color-secundario);
-        }
-
-        /* --- HERO SECCIÓN (PORTADA RECLAMOS INTEGRADA CON GRADIENTES RGM) --- */
-        .hero-reclamar {
-            position: relative;
-            background-image: linear-gradient(rgba(7, 14, 27, 0.75), rgba(7, 14, 27, 0.9)), url('obelisco-estudio.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 8%;
-            color: #ffffff;
-        }
-
-        .hero-contenedor {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 60px;
-            max-width: 1300px;
-            margin: 0 auto;
-            align-items: center;
-            width: 100%;
-        }
-
-        .hero-texto h1 {
-            font-family: var(--fuente-titulos);
-            font-size: 40px;
-            line-height: 1.3;
-            margin-bottom: 25px;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .hero-texto p {
-            font-size: 17px;
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-
-        /* --- FORMULARIO INTEGRADO PREMIUM --- */
-        .tarjeta-formulario {
-            background-color: rgba(7, 14, 27, 0.5);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            padding: 40px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-        }
-
-        .tarjeta-formulario h3 {
-            font-family: var(--fuente-titulos);
-            color: var(--color-secundario);
-            font-size: 20px;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .grupo-input {
-            margin-bottom: 20px;
-        }
-
-        .grupo-input label {
-            display: block;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 8px;
-            color: var(--color-secundario);
-            font-weight: 600;
-        }
-
-        .grupo-input input, .grupo-input select {
-            width: 100%;
-            padding: 13px;
-            background-color: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            color: #ffffff;
-            font-family: var(--fuente-cuerpo);
-            font-size: 15px;
-            outline: none;
-            transition: border-color 0.3s ease;
-        }
-
-        .grupo-input input:focus, .grupo-input select:focus {
-            border-color: var(--color-secundario);
-        }
-
-        .grupo-input select option {
-            background-color: var(--color-primario);
-            color: #ffffff;
-        }
-
-        .btn-enviar-formulario {
-            width: 100%;
-            background-color: var(--color-primario);
-            color: #ffffff;
-            border: 1px solid var(--color-secundario);
-            padding: 15px;
-            font-size: 14px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .btn-enviar-formulario:hover {
-            background-color: var(--color-secundario);
-            color: var(--color-primario);
-            box-shadow: 0 15px 30px rgba(197, 168, 128, 0.2);
-        }
-
-        /* --- SECCIÓN VENTAJAS (GRID CORPORATIVO RGM) --- */
-        .seccion-ventajas {
-            padding: 140px 12%;
-            background-color: var(--color-fondo-claro);
-            text-align: center;
-        }
-
-        .titulo-seccion {
-            font-family: var(--fuente-titulos);
-            font-size: 2.2rem;
-            color: var(--color-primario);
-            margin-bottom: 15px;
-            font-weight: 500;
-            letter-spacing: 1px;
-        }
-
-        .linea-decorativa {
-            width: 40px;
-            height: 1px;
-            background-color: var(--color-secundario);
-            margin: 0 auto 50px auto;
-        }
-
-        .grid-ventajas {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 35px;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .tarjeta-ventaja {
-            background-color: #ffffff;
-            padding: 55px 40px;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .tarjeta-ventaja:hover {
-            transform: translateY(-8px);
-            border-color: var(--color-secundario);
-            box-shadow: 0 30px 60px rgba(7, 14, 27, 0.04);
-        }
-
-        .tarjeta-ventaja h4 {
-            font-family: var(--fuente-titulos);
-            font-size: 1.25rem;
-            color: var(--color-primario);
-            margin-bottom: 18px;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        .tarjeta-ventaja p {
-            color: var(--color-texto-suave);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* --- PASOS CRÍTICOS (CRONOLOGÍA ASESORAMIENTO) --- */
-        .seccion-pasos {
-            padding: 140px 12%;
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .lista-pasos {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 35px;
-            margin-top: 40px;
-        }
-
-        .item-paso {
-            background-color: #ffffff;
-            border-left: 2px solid var(--color-alerta);
-            padding: 35px 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            border-top: 1px solid #e2e8f0;
-            border-right: 1px solid #e2e8f0;
-            border-bottom: 1px solid #e2e8f0;
-        }
-
-        .item-paso strong {
-            font-family: var(--fuente-titulos);
-            color: var(--color-primario);
-            font-size: 1.15rem;
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-        }
-
-        .item-paso p {
-            color: var(--color-texto-suave);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-weight: 300;
-        }
-
-        /* --- 🟢 NUEVO BOTÓN FLOTANTE FIXED DE WHATSAPP --- */
-        .boton-whatsapp-fijo {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #25D366;
-            color: #ffffff;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            z-index: 9999;
-             transition: transform 0.3s ease, background-color 0.3s ease;
-            text-decoration: none;
-        }
-
-        .boton-whatsapp-fijo:hover {
-            transform: scale(1.1);
-            background-color: #20ba59;
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 968px) {
-            .hero-contenedor, .grid-ventajas, .lista-pasos {
-                grid-template-columns: 1fr;
-            }
-            .hero-texto { text-align: center; }
-            .hero-texto h1 { font-size: 32px; }
-            .seccion-ventajas, .seccion-pasos { padding: 100px 5%; }
-            .titulo-seccion { font-size: 2rem; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RGMA | Accidentes en Uber, DiDi, Cabify - Reclamo 24hs</title>
+<meta name="description" content="¿Te lesionaste en Uber, DiDi o Cabify? RGMA División Accidentes reclama tu indemnización. Sin adelantos. Respaldado por Riganti, Geiler & Márquez Allurialde.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0F172A;--accent:#DC2626;--gold:#c5a880;--text:#1E293B;--bg:#F8FAFC;--muted:#64748B}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',sans-serif}
+body{color:var(--text);background:var(--bg);line-height:1.5}
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:12px 5%;background:#fff;border-bottom:1px solid #E2E8F0;position:sticky;top:0;z-index:50}
+.logo-img{height:42px;width:auto;object-fit:contain}
+.btn-corporate{padding:.55rem 1rem;border:1.5px solid var(--primary);color:var(--primary);background:transparent;text-decoration:none;font-weight:600;font-size:.8rem;border-radius:6px}
+.hero{display:grid;place-items:center;padding:52px 5% 32px;background:#fff;text-align:center}
+.hero h1{font-size:clamp(1.9rem,4vw,2.65rem);color:var(--primary);max-width:800px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:16px}
+.hero .sub{font-size:1.06rem;color:#475569;max-width:650px;margin-bottom:26px}
+.search-box{background:#fff;padding:24px;border-radius:12px;box-shadow:0 8px 32px rgba(15,23,42,.06);width:100%;max-width:520px;border:1px solid #F1F5F9}
+.search-box h3{font-size:.95rem;margin-bottom:14px;color:var(--primary);text-align:left}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px}
+.app-btn{padding:14px;border:1.5px solid #CBD5E1;background:#fff;border-radius:8px;cursor:pointer;font-weight:600;font-size:.9rem;transition:.15s}
+.app-btn[aria-checked=true]{border-color:var(--primary);background:var(--primary);color:#fff}
+.input-group{margin-bottom:12px}.input-group input{width:100%;padding:13px 12px;border:1.5px solid #CBD5E1;border-radius:8px;font-size:1rem;outline:none}
+.btn-submit{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:1.05rem;font-weight:700;cursor:pointer}
+.legal-mini{font-size:.72rem;color:#94A3B8;margin-top:12px;text-align:left;line-height:1.4}
+.evidence-section{padding:64px 5%;background:#fff;text-align:center;border-top:1px solid #F1F5F9}
+.evidence-section h2{font-size:1.6rem;color:var(--primary);font-weight:700;margin-bottom:8px}
+.evidence-divider{width:32px;height:3px;background:var(--accent);margin:0 auto 36px}
+.evidence-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1024px;margin:0 auto}
+.evidence-card{background:#fff;border:1px solid #F1F5F9;border-left:3px solid var(--accent);padding:22px;text-align:left;border-radius:0 8px 8px 0}
+.evidence-card h3{font-size:.95rem;margin-bottom:6px}.evidence-card p{font-size:.88rem;color:var(--muted)}
+.corporate-bridge{background:#070e1b;color:#fff;padding:68px 5%;text-align:center}
+.bridge-kicker{color:var(--gold);letter-spacing:4px;font-size:.8rem;margin-bottom:18px;font-weight:600}
+.bridge-logo{max-width:340px;margin:0 auto 18px;display:block;height:auto}
+.btn-bridge{display:inline-block;padding:12px 26px;background:#fff;color:var(--primary);text-decoration:none;font-weight:700;border-radius:6px;font-size:.9rem;margin-top:10px}
+.trust{padding:28px 5%;display:flex;gap:18px;flex-wrap:wrap;justify-content:center;align-items:center;color:#94A3B8;font-size:.8rem;border-top:1px solid rgba(255,255,255,.08);margin-top:32px}
+.whatsapp-float{position:fixed;bottom:18px;right:18px;width:56px;height:56px;background:#25D366;border-radius:50%;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:60}
+.success-message{display:none;text-align:center;padding:18px 0}
+@media(max-width:768px){.evidence-grid{grid-template-columns:1fr}.navbar .btn-corporate{display:none}.sticky-cta{position:fixed;bottom:0;left:0;right:0;background:#fff;padding:12px 5%;border-top:1px solid #E2E8F0;z-index:59}}
+@media(min-width:769px){.sticky-cta{display:none}}
+</style>
 </head>
 <body>
 
-    <!-- 🧭 NAVEGACIÓN INSTITUCIONAL FIEL A RGM -->
-    <header class="header-premium">
-        <a href="#" class="logo-rgm">RGM<span>A</span></a>
-        <!-- INTERCONEXIÓN: Enlace directo a tu portal principal B -->
-        <a href="https://github.io" class="btn-volver-institucional">← Portal Institucional</a>
-    </header>
+<nav class="navbar">
+  <div class="logo-container">
+    <img src="rgma-logo-horizontal.webp" alt="RGMA Division Accidentes" class="logo-img" width="240" height="44">
+  </div>
+  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" target="_blank" class="btn-corporate">Portal Corporativo</a>
+</nav>
 
-    <!-- 🛡️ HERO RECLAMAR APP CON FILTRO OSCURO CORPORATIVO -->
-    <section class="hero-reclamar">
-        <div class="hero-contenedor">
-            <div class="hero-texto">
-                <h1>¿Te lesionaste viajando en Uber, DiDi o Cabify?</h1>
-                <p>Las aplicaciones corporativas y los sistemas de seguros suelen deslindar responsabilidades tras un siniestro. Haga valer sus derechos con la división de alta complejidad en pasajeros transportados de la firma RGM.</p>
-            </div>
-            
-            <div class="tarjeta-formulario">
-                <h3>Iniciar Consulta Gratuita</h3>
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Su requerimiento institucional ha sido recibido con éxito de manera estrictamente confidencial. Un profesional de la firma RGM se comunicará a la brevedad.');">
-                    <div class="grupo-input">
-                        <label for="nombre">Nombre Completo</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
-                    </div>
-                    <div class="grupo-input">
-                        <label for="app">¿En qué aplicación viajabas?</label>
-                        <select id="app" name="app" required>
-                            <option value="" disabled selected>Seleccione la plataforma...</option>
-                            <option value="uber">Uber</option>
-                            <option value="didi">DiDi</option>
-                            <option value="cabify">Cabify</option>
-                            <option value="otro">Otro Servicio de Plataforma</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn-enviar-formulario">Reclamar Indemnización</button>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- 📊 SECCIÓN VALOR (¿POR QUÉ ELEGIRNOS?) -->
-    <section class="seccion-ventajas">
-        <h2 class="titulo-seccion">Especialistas en Litigios de Plataformas</h2>
-        <div class="linea-decorativa"></div>
-        <div class="grid-ventajas">
-            <div class="tarjeta-ventaja">
-                <h4>100% a Resultado</h4>
-                <p>Financiamos la totalidad de los gastos periciales. Solo percibimos honorarios al concretar su indemnización legal.</p>
-            </div>
-            <div class="tarjeta-ventaja">
-                <h4>Especialistas en Apps</h4>
-                <p>Análisis riguroso de la letra chica en términos contractuales complejos de plataformas globales.</p>
-            </div>
-            <div class="tarjeta-ventaja">
-                <h4>Gestión Integral</h4>
-                <p>Asumimos la representación ante audiencias, negociaciones corporativas de seguros y pericias médicas.</p>
-            </div>
-        </div>
-    </section>
-     <!-- ⚠️ PROTOCOLO DE EVIDENCIA Y CIERRE -->
-    <section class="seccion-pasos">
-        <h2 class="titulo-seccion" style="text-align: center; color: var(--color-alerta);">Protocolo Crítico de Evidencia</h2>
-        <div class="linea-decorativa" style="background-color: var(--color-alerta);"></div>
-        
-        <div class="lista-pasos">
-            <div class="item-paso">
-                <strong>1. Denuncia Policial</strong>
-                <p>Ante lesiones, concurrí a la comisaría correspondiente a la zona del choque de forma urgente.</p>
-            </div>
-            <div class="item-paso">
-                <strong>2. Evidencia Digital</strong>
-                <p>Capturá pantallas del viaje activo (patente, chofer, ruta y tarifa) antes de que cierre la sesión.</p>
-            </div>
-            <div class="item-paso">
-                <strong>3. Constancia Médica</strong>
-                <p>Acudí a un centro médico dentro de las primeras 48 horas. Exigí constancia del origen vehicular.</p>
-            </div>
-            <div class="item-paso">
-                <strong>4. Exclusión de Aseguradoras</strong>
-                <p>No firme documentación rápida ni preste declaraciones a liquidadores sin patrocinio directo de RGM.</p>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+  <h1>¿Te lesionaste viajando en <span style="color:var(--accent)">Uber, DiDi o Cabify?</span></h1>
+  <p class="sub">Las apps dilatan los pagos y te hacen firmar rápido. RGMA audita tu caso en 24hs y reclama la indemnización completa. Sin adelantos.</p>
 
-    <!-- 🟢 BOTÓN INTERACTIVO DE WHATSAPP FLOTANTE -->
-    <a href="https://wa.me" class="boton-whatsapp-fijo" target="_blank" title="Contactar por WhatsApp">
-        <svg xmlns="http://w3.org" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" style="display: block;"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.948 0c3.176.001 6.163 1.24 8.413 3.496 2.25 2.256 3.484 5.247 3.48 8.425-.008 6.599-5.346 11.947-11.898 11.947-2.006-.001-3.973-.508-5.729-1.475L0 24zm6.49-4.981c1.657.982 3.315 1.517 5.4 1.518 5.485 0 9.948-4.487 9.954-10.001.003-2.671-1.041-5.183-2.94-7.086-1.9-1.904-4.417-2.951-7.082-2.954-5.492 0-9.956 4.487-9.962 10.001-.002 1.954.512 3.86 1.49 5.56l-1.002 3.662 3.742-.981zm12.38-5.383c-.33-.165-1.951-.963-2.258-1.077-.306-.113-.53-.169-.752.165-.222.335-.858 1.077-1.052 1.3-.194.223-.389.247-.72.082-1.354-.679-2.261-1.196-3.171-2.762-.24-.413.24-.383.687-1.275.083-.165.042-.31-.02-.474-.063-.165-.53-1.275-.726-1.748-.191-.459-.386-.396-.53-.404-.135-.007-.29-.009-.445-.009-.155 0-.407.058-.621.288-.214.23-.817.799-.817 1.95s.839 2.262.955 2.417c.117.155 1.652 2.522 4.002 3.535.56.242 1.0.387 1.341.495.563.179 1.076.154 1.482.094.453-.067 1.951-.798 2.227-1.57.275-.771.275-1.432.194-1.57-.081-.138-.297-.221-.627-.386z"/></svg>
-    </a>
+  <div class="search-box" id="formBox">
+    <div id="formContainer">
+      <h3>1. ¿En qué app viajabas?</h3>
+      <div class="app-grid" role="radiogroup">
+        <button type="button" class="app-btn" role="radio" aria-checked="false" data-app="Uber">Uber</button>
+        <button type="button" class="app-btn" role="radio" aria-checked="false" data-app="DiDi">DiDi</button>
+        <button type="button" class="app-btn" role="radio" aria-checked="false" data-app="Cabify">Cabify</button>
+        <button type="button" class="app-btn" role="radio" aria-checked="false" data-app="Otro">Otro</button>
+      </div>
+      <form id="leadForm" novalidate>
+        <input type="hidden" id="selectedApp" name="plataforma"><input type="hidden" id="utm_source" name="utm">
+        <div class="input-group"><input type="text" id="clientName" placeholder="Nombre y apellido" required></div>
+        <div class="input-group"><input type="tel" id="clientPhone" placeholder="WhatsApp" required inputmode="numeric"></div>
+        <button type="submit" class="btn-submit">Auditar mi caso gratis →</button>
+        <p class="legal-mini">Al enviar aceptás la Política de Privacidad. Consulta gratuita. Art. 1746 CCCN. No se garantiza resultado.</p>
+      </form>
+    </div>
+    <div class="success-message" id="localSuccess">
+      <h4 style="color:#16A34A">✓ Solicitud recibida</h4>
+      <p style="color:#475569;font-size:.95rem;margin-top:6px">Te escribimos por WhatsApp en 15 min. Guardá las capturas del viaje.</p>
+      <a href="#" id="waSuccess" class="btn-submit" style="display:block;margin-top:16px;text-decoration:none;text-align:center;background:#25D366">Continuar por WhatsApp</a>
+    </div>
+  </div>
+</section>
 
+<section class="evidence-section">
+  <h2>Protocolo de Evidencia</h2><div class="evidence-divider"></div>
+  <div class="evidence-grid">
+    <div class="evidence-card"><h3>1. Captura del viaje</h3><p>Patente, chofer y recorrido antes de que se borre de la app.</p></div>
+    <div class="evidence-card"><h3>2. Denuncia y médico en 48hs</h3><p>Pedí constancia que diga "accidente de tránsito".</p></div>
+    <div class="evidence-card"><h3>3. No firmes acuerdos</h3><p>Las aseguradoras ofrecen $50k rápidos. Tu caso vale 10x más.</p></div>
+    <div class="evidence-card"><h3>4. RGMA te respalda</h3><p>Patrocinio total. Solo cobramos si vos cobrás.</p></div>
+  </div>
+</section>
+
+<section class="corporate-bridge">
+  <div class="bridge-kicker">RGMA RESPALDADO POR</div>
+  <img src="logo-nombres-final-parafondooscuro.jpg" alt="Riganti, Geiler & Márquez Allurialde" class="bridge-logo" width="360" height="90">
+  <h2 style="font-family:'Times New Roman',serif;font-weight:400;font-size:1.8rem;color:#e8d5b0">Riganti, Geiler & Márquez Allurialde</h2>
+  <p style="color:#94A3B8;max-width:720px;margin:14px auto 0;font-size:.95rem;line-height:1.6">La división de alta complejidad en pasajeros transportados RGMA es coordinada institucionalmente por el estudio corporativo Riganti, Geiler & Márquez Allurialde. Operamos bajo secreto profesional y ética.</p>
+  <a href="https://rigantijuanpablo-prog.github.io/web-ai/" target="_blank" class="btn-bridge">Acceder al Sitio Institucional</a>
+  <div class="trust"><span>✓ Matriculados CABA</span><span>✓ 24/7</span><span>✓ Sin anticipo</span><span>✓ 4.8★ Google</span></div>
+</section>
+
+<div class="sticky-cta"><button class="btn-submit" onclick="document.getElementById('formBox').scrollIntoView({behavior:'smooth'})">Reclamar ahora - Gratis</button></div>
+<a href="https://wa.me/54911XXXXXXXX" class="whatsapp-float" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 448 512" fill="white"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg></a>
+
+<script>
+const params=new URLSearchParams(location.search);document.getElementById('utm_source').value=params.get('utm_source')||params.get('gclid')||'organic';
+const btns=document.querySelectorAll('.app-btn');let selected='';
+btns.forEach(b=>b.addEventListener('click',()=>{btns.forEach(x=>x.setAttribute('aria-checked','false'));b.setAttribute('aria-checked','true');selected=b.dataset.app;document.getElementById('selectedApp').value=selected;}));
+document.getElementById('leadForm').addEventListener('submit',e=>{
+  e.preventDefault();
+  if(!selected){alert('Seleccioná la app');return;}
+  const name=document.getElementById('clientName').value.trim();const phone=document.getElementById('clientPhone').value.trim();
+  if(name.length<4||phone.length<8){alert('Completá datos reales');return;}
+  const data={plataforma:selected,nombre:name,telefono:phone,utm:document.getElementById('utm_source').value,ts:new Date().toISOString()};
+  console.log('LEAD RGMA',data);
+  document.getElementById('formContainer').style.display='none';
+  document.getElementById('localSuccess').style.display='block';
+  document.getElementById('waSuccess').href=`https://wa.me/54911XXXXXXXX?text=Hola%20RGMA,%20accidente%20en%20${selected}%20-%20${encodeURIComponent(name)}`;
+  // gtag('event','conversion',{'send_to':'AW-XXXX'});
+  // fetch('TU_WEBHOOK', {method:'POST', body:JSON.stringify(data)})
+});
+</script>
 </body>
 </html>
